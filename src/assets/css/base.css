@@ -1,0 +1,61 @@
+@import "./normalize.css";
+
+/*:root -> 获取根元素html*/
+:root {
+    --color-text: #666;
+    --color-high-text: #ff5777;
+    --color-tint: #ff8198;
+    --color-background: #fff;
+    --font-size: 14px;
+    --line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    /*border-box 告诉浏览器去理解你设置的边框和内边距的值是包含在width内的。*/
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    user-select: none; /* 禁止用户鼠标在页面上选中文字/图片等 */
+    -webkit-tap-highlight-color: transparent; /* webkit是苹果浏览器引擎，tap点击，highlight背景高亮，color颜色，颜色用数值调节 */
+    background: var(--color-background);
+    color: var(--color-text);
+    /* rem vw/vh */
+    width: 100vw;
+}
+
+a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+/*after伪类元素，设置在clear-fix后*/
+.clear-fix::after {
+    clear: both;
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    /*是否可见*/
+    visibility: hidden;
+}
+
+.clear-fix {
+    /*Zoom属性是IE浏览器的专有属性， 它可以设置或检索对象的缩放比例。
+    在平常的css编写过程中，zoom:1能够比较神奇地解决ie下比较奇葩的bug。
+    譬如外边距（margin）的重叠，譬如浮动的清除，譬如触发ie的 haslayout属性等等。*/
+    zoom: 1;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
