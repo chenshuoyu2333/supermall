@@ -8,7 +8,6 @@ export function request(config) {
       return config
   },error => {
     console.log(error);
-
   })
   instance.interceptors.response.use(config =>{
     return config.data

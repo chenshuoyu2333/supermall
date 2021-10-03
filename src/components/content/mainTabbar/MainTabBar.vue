@@ -22,7 +22,7 @@
             <div>分类</div>
           </template>
         </TabBarItem>
-        <TabBarItem path="/shop">
+        <TabBarItem path="/cart">
           <template #item-icon>
             <img src="~assets/img/tabbar/shopcart.svg" alt="" srcset="">
           </template>
