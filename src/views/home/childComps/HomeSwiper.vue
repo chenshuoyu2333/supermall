@@ -10,6 +10,7 @@
   </div>
 </template>
 <script>
+
 export default {
 
   name: "HomeSwiper",
@@ -31,6 +32,7 @@ export default {
       if (!this.isLoad){
         this.$emit('homeSwiperImageLoad')
         this.isLoad=true
+
       }
     }
   }
@@ -51,13 +53,7 @@ export default {
   text-align: center;
 }
 
-.el-carousel__item:nth-child(2n) {
-  background-color: #99a9bf;
-}
 
-.el-carousel__item:nth-child(2n + 1) {
-  background-color: #d3dce6;
-}
 img {
   width: 100%;
   height: 100%;

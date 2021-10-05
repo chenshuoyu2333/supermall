@@ -74,12 +74,11 @@ export default {
   },
 
   activated() {
-    console.log('active');
+
     this.$refs.scroll.scrollTo(0, this.saveY, 100)
     this.$refs.scroll.refresh()
   },
   deactivated() {
-    console.log('active');
     this.saveY = this.$refs.scroll.getScrollY()
   },
   created() {
@@ -93,10 +92,9 @@ export default {
 
   },
   mounted() {
-    let refresh = debounce(this.$refs.scroll.refresh,500)
+    let refresh = debounce(this.$refs.scroll.refresh,50)
     this.$bus.$on('itemImageLoad',()=>{
       refresh()
-
     })
   },
 
@@ -104,6 +102,7 @@ export default {
     homeSwiperImageLoad(){
       this.taboffsetTop= this.$refs.tabControl2.$el.offsetTop
       console.log(this.taboffsetTop)
+      this.$refs.scroll.refresh()
     },
 
     //切换home页分类
@@ -170,28 +169,28 @@ export default {
   color: #ffffff;
 
 
-  /*position: fixed;*/
+  position: relative;
   /* left: 0;*/
   /* right: 0;*/
   /* top: 0;*/
-  /* z-index: 9;*/
+   z-index: 9;
 }
 .tab-control{
   position:relative;
   z-index:101 ;
 }
-.content {
-  position: absolute;
-  top: 44px;
-  bottom: 49px;
-  left: 0;
-  right: 0;
-  overflow: hidden;
-}
-
 /*.content {*/
-/*  height: calc(100% - 93px);*/
-
-
+/*  position: absolute;*/
+/*  top: 44px;*/
+/*  bottom: 49px;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*  overflow: hidden;*/
 /*}*/
+
+.content {
+  height: calc(100% - 93px);
+overflow: hidden;
+
+}
 </style>
