@@ -25,6 +25,7 @@ name: "DetailNavBar",
   methods:{
     titleClick(index){
       this.currentIndex=index
+      this.$emit('tabClick',index)
     },
     back(){
       this.$router.back()
